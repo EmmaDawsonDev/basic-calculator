@@ -31,6 +31,8 @@ if (!action) {
   action === 'multiply' ||
   action === 'divide'
 ) {
+  calculator.dataset.firstValue = displayedNum
+  calculator.dataset.operator = action
   key.classList.add('is-depressed'); // adds class to change button color
   calculator.dataset.previousKeyType = 'operator'; // changes previousKeyType to operator
   setTimeout(function(){
@@ -42,12 +44,32 @@ if (!action) {
 }
 
 if (action === 'clear') {
-  console.log('clear key!');
+  display.textContent = "0";
 }
 
 if (action === 'calculate') {
   console.log('equal key!');
+  const firstValue = calculator.dataset.firstValue;
+  const operator = calculator.dataset.operator;
+  const secondValue = displayedNum;
+
+  const calculate = (n1, operator, n2) => {
+    let result = ''
+    
+    if (operator === 'add') {
+      result = parseFloat(n1) + parseFloat(n2)
+    } else if (operator === 'subtract') {
+      result = parseFloat(n1) - parseFloat(n2)
+    } else if (operator === 'multiply') {
+      result = parseFloat(n1) * parseFloat(n2)
+    } else if (operator === 'divide') {
+      result = parseFloat(n1) / parseFloat(n2)
+    }
+    
+    return result
+  }
   
+  display.textContent = calculate(firstValue, operator, secondValue);
  
 } 
 
