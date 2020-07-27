@@ -1,6 +1,12 @@
 //https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/
 
 
+//TO DO:
+
+//Get +- button working
+// get % button working
+// make it work when multiple operations are used
+
 const calculator = document.querySelector(".calculator");
 const keys = calculator.querySelector(".calculator__keys");
 const display = document.querySelector('.calculator__display');
@@ -12,7 +18,7 @@ keys.addEventListener("click", e => {
 	const key = e.target;
 	const action = key.dataset.action;
 	const keyContent = key.textContent;
-    const displayedNum = display.textContent;
+  const displayedNum = display.textContent;
   const previousKeyType = calculator.dataset.previousKeyType;
   //Showing the numbers on the screen
 if (!action) {
@@ -52,24 +58,25 @@ if (action === 'calculate') {
   const firstValue = calculator.dataset.firstValue;
   const operator = calculator.dataset.operator;
   const secondValue = displayedNum;
-
+  calculator.dataset.previousKeyType = 'operator'; // resets so that previous number is remived from screen.
   const calculate = (n1, operator, n2) => {
     let result = ''
     
     if (operator === 'add') {
-      result = parseFloat(n1) + parseFloat(n2)
+      result = parseFloat(n1) + parseFloat(n2);
     } else if (operator === 'subtract') {
-      result = parseFloat(n1) - parseFloat(n2)
+      result = parseFloat(n1) - parseFloat(n2);
     } else if (operator === 'multiply') {
-      result = parseFloat(n1) * parseFloat(n2)
+      result = parseFloat(n1) * parseFloat(n2);
     } else if (operator === 'divide') {
-      result = parseFloat(n1) / parseFloat(n2)
+      result = parseFloat(n1) / parseFloat(n2);
     }
     
-    return result
+    return result;
   }
   
-  display.textContent = calculate(firstValue, operator, secondValue);
+  const answer = calculate(firstValue, operator, secondValue)
+  display.textContent = answer;
  
 } 
 
@@ -77,3 +84,4 @@ if (action === 'calculate') {
  
  }
 });
+
