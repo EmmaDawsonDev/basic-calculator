@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Emma's calculator</title>
+  <meta name="description" content="Calculator">
+  <meta name="author" content="Emma Dawson">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+
+<div class="container calculator">
+  <div class="screen calculator__display">0</div>
+  <div class="buttons calculator__keys">
+    <!--row1-->
+    <div class="row">
+      <div class="btn control" data-action="clear">C</div>
+      <div class="btn control">+-</div>
+      <div class="btn control">%</div>
+      <div class="btn operator" data-action="divide">÷</div>
+    </div>
+    <!--row2-->
+    <div class="row">
+      <div class="btn num">7</div>
+      <div class="btn num">8</div>
+      <div class="btn num">9</div>
+      <div class="btn operator" data-action="multiply">&times;</div>
+    </div>
+    <!--row3-->
+    <div class="row">
+      <div class="btn num">4</div>
+      <div class="btn num">5</div>
+      <div class="btn num">6</div>
+      <div class="btn operator" data-action="subtract">-</div>
+    </div>
+      <!--row4-->
+    <div class="row">
+      <div class="btn num">1</div>
+      <div class="btn num">2</div>
+      <div class="btn num">3</div>
+      <div class="btn operator" data-action="add">+</div>
+    </div>
+      <!--row5-->
+    <div class="row">
+      <div class="btn"></div>
+      <div class="btn num">0</div>
+      
+      <div class="btn num" data-action="decimal">.</div>
+      <div class="btn operator" data-action="calculate">=</div>
+    </div>
+    </div>
+  </div>
+</div>
+  <script src="scripts.js"></script>
+</body>
+</html>
