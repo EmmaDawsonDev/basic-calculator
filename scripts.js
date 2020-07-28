@@ -22,9 +22,9 @@ keys.addEventListener("click", e => {
   const previousKeyType = calculator.dataset.previousKeyType;
   //Showing the numbers on the screen
 if (!action) {
-	 if (displayedNum === '0' || previousKeyType === 'operator') {
+	 if (displayedNum === '0' || previousKeyType === 'operator' || previousKeyType === "calculate") {
     display.textContent = keyContent;
-  calculator.dataset.previousKeyType = 'num'; //resets previousKeyType from operator to num
+  calculator.dataset.previousKeyType = 'number'; //resets previousKeyType from operator to number
   
   } else {
     display.textContent = displayedNum + keyContent;
@@ -46,11 +46,19 @@ if (!action) {
  }, 1000); // removes color change class after 1s.
 }
    if (action === 'decimal') {
-   display.textContent = displayedNum + '.';
-}
+    if (!displayedNum.includes('.')) {
+      display.textContent = displayedNum + '.';
+      
+    } else if (previousKeyType === 'operator' || previousKeyType === "calculate") {
+      display.textContent = '0.';
+    }
+    calculator.dataset.previousKeyType = 'decimal';
+    }
+
 
 if (action === 'clear') {
   display.textContent = "0";
+  calculator.dataset.previousKeyType = 'clear';
 }
 
 if (action === 'calculate') {
@@ -58,7 +66,7 @@ if (action === 'calculate') {
   const firstValue = calculator.dataset.firstValue;
   const operator = calculator.dataset.operator;
   const secondValue = displayedNum;
-  calculator.dataset.previousKeyType = 'operator'; // resets so that previous number is remived from screen.
+  calculator.dataset.previousKeyType = 'calculate'; // resets so that previous number is removed from screen.
   const calculate = (n1, operator, n2) => {
     let result = ''
     
