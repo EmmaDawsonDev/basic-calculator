@@ -61,8 +61,12 @@ if (action === 'clear') {
   calculator.dataset.previousKeyType = 'clear';
 }
 
+// if (action === "negative") {
+//   display.textContext = `-${displayedNum}`;
+// }
+
 if (action === 'calculate') {
-  console.log('equal key!');
+  
   const firstValue = calculator.dataset.firstValue;
   const operator = calculator.dataset.operator;
   const secondValue = displayedNum;
