@@ -17,47 +17,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
 box-shadow: 1px 1px 6px 1px rgba(0,0,0,1);
 }
 
-@media (max-width: 1200px) {
-  .container {
-    width: 30%;
-  }
-}
 
-@media (max-width: 1000px) {
-  .container {
-    width: 35%;
-  }
-}
-
-@media (max-width: 840px) {
-  .container {
-    width: 40%;
-  }
-}
-
-@media (max-width: 740px) {
-  .container {
-    width: 50%;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    width: 70%;
-  }
-}
-
-@media (max-width: 450px) {
-  .container {
-    width: 95%;
-  }
-}
-
-@media (max-width: 320px) {
-  .container {
-    width: 98%;
-  }
-}
 
 .screen {
   width: 90%;
@@ -66,7 +26,8 @@ box-shadow: 1px 1px 6px 1px rgba(0,0,0,1);
   background-color: #f3f3f3;
   position: absolute;
   top: 1em;
-  left: 0.7em;
+  left: 0.5em;
+  padding-right: 3px;
   text-align: right;
   font-size: 2.1rem;
  overflow: hidden;
@@ -122,4 +83,46 @@ box-shadow: 1px 1px 6px 1px rgba(0,0,0,1);
 
 .is-depressed {
 	background-color: white;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 35%;
+  }
+}
+
+@media (max-width: 840px) {
+  .container {
+    width: 40%;
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    width: 98%;
+  }
 }

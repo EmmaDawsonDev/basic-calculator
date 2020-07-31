@@ -45,6 +45,22 @@ if (!action) {
     key.classList.remove('is-depressed');
  }, 1000); // removes color change class after 1s.
 }
+
+ if (
+  action === 'add' ||
+  action === 'subtract' ||
+  action === 'multiply' ||
+  action === 'divide'
+) {
+  calculator.dataset.firstValue = displayedNum
+  calculator.dataset.operator = action
+  key.classList.add('is-depressed'); // adds class to change button color
+  calculator.dataset.previousKeyType = 'operator'; // changes previousKeyType to operator
+  setTimeout(function(){
+    key.classList.remove('is-depressed');
+ }, 1000); // removes color change class after 1s.
+}
+
    if (action === 'decimal') {
     if (!displayedNum.includes('.')) {
       display.textContent = displayedNum + '.';
