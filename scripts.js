@@ -3,7 +3,7 @@
 
 //TO DO:
 
-//Get +- button working
+
 // get % button working
 // make it work when multiple operations are used
 
@@ -61,9 +61,9 @@ if (action === 'clear') {
   calculator.dataset.previousKeyType = 'clear';
 }
 
-// if (action === "negative") {
-//   display.textContext = `-${displayedNum}`;
-// }
+if (action === "negative") {
+  display.textContent = "-" + displayedNum;
+}
 
 if (action === 'calculate') {
   
