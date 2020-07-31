@@ -4,7 +4,7 @@
 //TO DO:
 
 
-// get % button working
+// get % button working - for + and -
 // make it work when multiple operations are used
 
 const calculator = document.querySelector(".calculator");
@@ -61,8 +61,14 @@ if (action === 'clear') {
   calculator.dataset.previousKeyType = 'clear';
 }
 
+if (action === "percent") {
+   display.textContent = displayedNum / 100;
+  calculator.dataset.previousKeyType = 'percent';
+}
+
 if (action === "negative") {
   display.textContent = "-" + displayedNum;
+  calculator.dataset.previousKeyType = 'negative';
 }
 
 if (action === 'calculate') {
