@@ -31,6 +31,7 @@ box-shadow: 1px 1px 6px 1px rgba(0,0,0,1);
   text-align: right;
   font-size: 2.1rem;
  overflow: hidden;
+
  
 }
 
@@ -83,6 +84,64 @@ box-shadow: 1px 1px 6px 1px rgba(0,0,0,1);
 
 .is-depressed {
 	background-color: white;
+}
+
+/* microphone styling */
+.microphone{
+  position: relative;
+}
+.microphone img{
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+  border-radius: 50%;
+}
+
+.microphone .tooltip{
+  /* visibility: hidden; */
+  position: absolute;
+  width: 200px;
+  background: rgb(63,94,251);
+  display: inline-block;
+  color: #fff;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  visibility: hidden;
+  
+}
+
+.microphone .tooltip::before{
+  content: '';
+  position: absolute;
+  border-width: 9px;
+  border-style: solid;
+  border-color: transparent rgb(63,94,251) transparent transparent;
+  left: 0;
+  top: 5px;
+  margin-left: -18px;
+}
+
+.microphone:hover .tooltip{
+  visibility: visible;
+}
+
+.record{
+  animation: microphone-animation 1.5s infinite;
+}
+@keyframes microphone-animation{
+  0% {
+      transform: scale(0.9);
+  }
+  70%{
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(0, 148, 255, 0.4);
+  }
+  100%{
+      transform: scale(0.9);
+      box-shadow: 0 0 0 0 rgba(0, 148, 255, 0);
+  }
 }
 
 @media (max-width: 1200px) {

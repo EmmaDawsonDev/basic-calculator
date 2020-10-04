@@ -119,3 +119,5 @@ if (action === 'calculate') {
  }
 });
 
+
+// Speech Recognition
