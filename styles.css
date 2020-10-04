@@ -93,18 +93,19 @@ box-shadow: 1px 1px 6px 1px rgba(0,0,0,1);
 .microphone img{
   height: 30px;
   width: 30px;
-  margin-left: 5px;
+  margin-left: 100%;
   border-radius: 50%;
 }
 
 .microphone .tooltip{
   /* visibility: hidden; */
-  position: absolute;
+  position: relative;
   width: 200px;
   background: rgb(63,94,251);
   display: inline-block;
   color: #fff;
-  margin-left: 5px;
+  margin-left: 110%;
+  top: -30px;
   padding: 5px;
   font-size: 12px;
   border-radius: 5px;
